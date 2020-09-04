@@ -45,11 +45,12 @@ print("Hello, World!")
 
 Для её запуска необходимо:
 <img src = "./img/newfile.jpg" width ="300" alt = "Новый файл">
-![Вводим код](./img/input.jpg)
-![Сохраняем файл](./img/save.jpg)
-![Выбираем расширение и имя](./img/nameand.jpg)
-![Запускам](./img/start.jpg)
-![Результат](./img/result.jpg)
+<img src = "./img/input.jpg" width ="300" alt = "Вводим код">
+<img src = "./img/save.jpg" width ="300" alt = "Сохраняем файл">
+<img src = "./img/nameand.jpg" width ="300" alt = "Выбираем расширение и имя">
+<img src = "./img/start.jpg" width ="300" alt = "Запускам">
+<img src = "./img/result.jpg" width ="300" alt = "Результат">
+
 
 Программа print("Hello, World!") выводит результат (текст  "Hello, World!" к консоль)
 
