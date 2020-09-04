@@ -43,7 +43,7 @@ Python, единственный из ТОП-5 языков программир
 print("Hello, World!")
 ```
 
-Для её запуска необходимо:
+Для её запуска необходимо:<br>
 <img src = "./img/newfile.jpg" width ="300" alt = "Новый файл"><br>
 <img src = "./img/input.jpg" width ="300" alt = "Вводим код"><br>
 <img src = "./img/save.jpg" width ="300" alt = "Сохраняем файл"><br>
