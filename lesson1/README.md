@@ -44,11 +44,11 @@ print("Hello, World!")
 ```
 
 Для её запуска необходимо:
-<img src = "./img/newfile.jpg" width ="300" alt = "Новый файл">
-<img src = "./img/input.jpg" width ="300" alt = "Вводим код">
-<img src = "./img/save.jpg" width ="300" alt = "Сохраняем файл">
-<img src = "./img/nameand.jpg" width ="300" alt = "Выбираем расширение и имя">
-<img src = "./img/start.jpg" width ="300" alt = "Запускам">
+<img src = "./img/newfile.jpg" width ="300" alt = "Новый файл"><br>
+<img src = "./img/input.jpg" width ="300" alt = "Вводим код"><br>
+<img src = "./img/save.jpg" width ="300" alt = "Сохраняем файл"><br>
+<img src = "./img/nameand.jpg" width ="300" alt = "Выбираем расширение и имя"><br>
+<img src = "./img/start.jpg" width ="300" alt = "Запускам"><br>
 <img src = "./img/result.jpg" width ="300" alt = "Результат">
 
 
