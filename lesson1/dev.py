@@ -1,4 +1,4 @@
-import math
+import math, random
 b = 3
 c = 4
 a = b / c
@@ -20,3 +20,9 @@ a = True
 print(type(a)) #<class 'bool'>
 a = None
 print(type(a)) #<class 'NoneType'>
+a = input("Строка приглашение: ")
+
+print(random.random())
+
+print(math.ceil(random.random()*100))
+
