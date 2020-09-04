@@ -44,7 +44,7 @@ print("Hello, World!")
 ```
 
 Для её запуска необходимо:
-![Новый файл](./img/newfile.jpg)
+<img src = "./img/newfile.jpg" width ="300" alt = "Новый файл">
 ![Вводим код](./img/input.jpg)
 ![Сохраняем файл](./img/save.jpg)
 ![Выбираем расширение и имя](./img/nameand.jpg)
