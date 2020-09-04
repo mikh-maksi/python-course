@@ -1,4 +1,4 @@
-import math, random
+import math, random, keyword
 b = 3
 c = 4
 a = b / c
@@ -25,4 +25,6 @@ a = input("Строка приглашение: ")
 print(random.random())
 
 print(math.ceil(random.random()*100))
+
+print (keyword.kwlist)
 
