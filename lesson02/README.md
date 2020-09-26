@@ -27,14 +27,7 @@
 
 
 ### and
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
@@ -68,14 +61,6 @@
 </table>
 
 ### or
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
 <table class="tg">
 <thead>
   <tr>
@@ -109,14 +94,7 @@
 </table>
 
 #### not
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
@@ -163,8 +141,144 @@ print(a)
 
 
 ## Условное выполнение
+В Python реализован оператор контроля выполнения (условный оператор) `if ... elif ... else`.
+
+С помощью этого инструмента существует возможность контролировать поток выполнения
+(По умолчанию выполняются все команды сверху вниз).
+Оператор контроля исполнения позволяет выполнять определенные участки кода не всегда,
+а только тогда, когда будет выполнено определенные условия.
+
+Синтаксис оператора выбора состоит из обязательного ключевого слова `if` и необязательных `elif`, `else`.
+
+Условный оператор начинается с ключевого слова `if` за которым следует условие (переменная типа` bool`, или выражение,
+который возвращает `bool`).
+После условия ставится двоеточие и с новой строки с отступом идет один или более операторов,
+которые будут выполнены в случае, когда условие будет равняться `True`.
+После блока `if` может быть ноль или более блоков `elif`, интерпретатор последовательно будет проверять
+все условия `elif` сверху вниз, пока не найдет ту, которая возвращает `True`, или они закончатся.
+После блока (ов) `elif` может содержаться один блок `else`, который выполнится, если все предыдущие условия равны `False`.
+
+## Условия
+В качестве операторов условий часто используют сравнения.
+Сравнение происходит с помощью операторов `<` (меньше), `<=` (меньше или равно),
+  `>` (Больше), `>=` (больше или равно), `==` (равно), `!=` (Не равно).
+
+```python
+a = 3
+b = 5
+c = a < b # True
+d = a > b # False
+```
+
+Определим с помощью оператора выбора есть число, его ввел пользователь положительным (больше нуля).
+```python
+a = input('Введите число')
+if int(a) > 0:
+    print("Число положительное")
+```
+Но бывают случаи, когда нам одного сравнения недостаточно для того, чтобы решить задачу. В случае анализа числа нам необходимо дать ответ когда число положительное (больше нуля), отрицательное (меньше нуля) и когда непосредственно является нулем.
+```python
+a = int(input('Введите число'))
+if a > 0:
+    print('Число положительное')
+elif a < 0:
+    print("Число отрицательное")
+else:
+    print('Это число - ноль')
+```
+Во время выполнения условного оператора интерпретатор Python проверяет условия сверху вниз пока не найдет ту,
+которая выполняется, затем выполнит выражение для этого условия и выйдет по проверке условий.
+
+```python
+a = int(input('Введите число'))
+if a > 0:
+    print('Число положительное')
+elif a == 1:
+    print('Число равно 1')
+else:
+    print("a < 0")
+```
+В таком случае код для условия `a == 1` никогда не исполнится.
+
+Разберем реализацию условного оператора на примере определения агрегатного состояния воды
+(Лед, вода, пар), то есть если вода имеет температуру ниже 0 градусов по
+Цельсию - она превращается в лед, если вода имеет температуру от 0 до 100 градусов
+она находится в жидком состоянии, то есть непосредственно водой
+и, если температура воды выше 100 градусов, она превратится в пар.
+
+```python
+t = input("Введите температуру воды")
+# Перетворимо рядок t на число
+t = int(t)
+if t <= 0:
+    print("Это - лед")
+elif 0 < t < 100:
+    print("Это - вода")
+else:
+    print("Это - пар")
+```
 ## Последовательность условий
+Условие в операторе выбора может быть составным.
+```python
+t = input("Введите температуру воды")
+# Перетворимо рядок t на число
+t = int(t)
+if t <= 0:
+    print("Это - лед")
+elif t > 0 and t < 100:
+    print("Это - вода")
+else:
+    print("Это - пар")
+```
+
+<table>
+<tr>
+<td>or</td><td>Логическое “ИЛИ”</td>
+</>
+<tr>
+<td>and</td><td>Логическое “И”</td>
+</tr>
+<tr>
+<td>not x</td><td>Логическое “НЕ”</td>
+</tr>
+<tr>
+<td><, <=, >, >=, !=, ==</td><td>Сравнения</td>
+</tr>
+<tr>
+<td>*, /, //, %</td><td>	Умножение, деление, целочисленное деление и остаток от деления</td>
+</tr>
+<tr>
+<td>+x, -x</td><td>	Положительное, отрицательное</td>
+</tr>
+<td>**</td><td>	Возведение в степень</td>
+</tr>
+<tr>
+
+</table>
+
+	
+	
+	
+	
+	
+	
+
 ## Вложенные условия
+В Python внутрь одного оператора может быть вложен другой.
+Пример такой вложенности для определения четвертей для координатной плоскости.
+```python
+    if x > 0:
+    if y > 0:               # x>0, y>0
+        print("Первая четверть")
+    else:                   # x>0, y<0
+        print("Четвертая четверть")
+else:
+    if y > 0:               # x<0, y>0
+        print("Вторая четверть")
+    else:                   # x<0, y<0
+        print("Третья четверть")
+```
+
 ## Перехват исключений с использованием try и except
 
 Виключення в Python &mdash; це помилки на рівні механізму запуску програми (інтерпретатору), які викликані неможливістю виконати той чи інший оператор, з будь-яких причин (змінна не існує,
@@ -256,7 +370,27 @@ while a <= 5:
 Умовою може бути будь-який вираз, або змінна Python, що може бути приведена до типу `bool`.
 
 ## «Бесконечные циклы» и break
+Бывают ситуации, в которых выход из цикла происходит не из-за изменения условия в управляющей команде цикла, а благодаря срабатыванию команды `break`.
+Команда `break` - полностью останавливает цикл.
+```python
+a = 0
+while True:
+    print(a)
+    if a == 20:
+        break
+    a +=1
+```
 ## Завершение итерации с помощью continue
+В Python
+```python
+a = 0
+while a < 20:
+    a +=1
+    if a % 2 == 0:
+        continue
+    print(a)
+```
+
 ## Comprehensions (list, dict, set).
 ## Определение циклов с помощью for
 ### Цикл for
