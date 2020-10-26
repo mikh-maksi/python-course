@@ -13,6 +13,7 @@ AUDIO = []
 VIDEO = []
 DOCUMENTS = []
 OTHER = []
+EXTENSIONS = set()
 
 REGISTERED_EXTENSIONS = {
     'JPEG': IMAGES,
@@ -31,8 +32,10 @@ REGISTERED_EXTENSIONS = {
 }
 for file in files:
     unknown = True
-    for ext, container in REGISTERED_EXTENSIONS.items():
+    for extension in REGISTERED_EXTENSIONS.items():
+        ext, container = extension
         if file.upper().endswith(ext):
+            EXTENSIONS.add(ext)
             container.append(file)
             unknown = False
             break
@@ -44,3 +47,4 @@ print(f"Video files: {VIDEO}")
 print(f"Documents: {DOCUMENTS}")
 print(f"Audio files: {AUDIO}")
 print(f"Unknown files: {OTHER}")
+print(f"There are files of types: {EXTENSIONS}")
