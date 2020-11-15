@@ -1,4 +1,3 @@
-operators = ("+", "-", "*", "/")
 result = None
 operand = None
 operator = None
@@ -12,7 +11,7 @@ while True:
         try:
             operand = float(user_input)
         except ValueError:
-            print(f"{user_input} is not a number. Try again.")
+            print(f"'{user_input}' is not a number. Try again.")
             continue
         wait_for_number = False
         if result is None:
@@ -27,12 +26,18 @@ while True:
             elif operator == "/":
                 result /= operand
     else:
-        operator = None
-        for valid_operator in operators:
-            if user_input == valid_operator:
-                operator = user_input
+        if (
+            user_input == "+"
+            or user_input == "-"
+            or user_input == "/"
+            or user_input == "*"
+        ):
+            operator = user_input
+        else:
+            operator = None
+
         if operator is None:
-            print(f"{user_input} is not in {operators}. Try again")
+            print(f"{user_input} is not '+' or '-' or '/' or '*'. Try again")
         else:
             wait_for_number = True
 
